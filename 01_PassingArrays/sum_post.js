@@ -10,23 +10,9 @@ function _freeArray(heapBytes){
   Module._free(heapBytes.byteOffset);
 }
 
-Module["sum"] = function(){
-
-  var floatData = new Float32Array(5);
-  for(var i = 0; i < floatData.length; i++){
-    floatData[i] = i * 2;
-  }
-
-  var heapBytes = _arrayToHeap(floatData);
-
-  var ret = Module.ccall('sum', 'number',['number','number'], [heapBytes.byteOffset, floatData.length]);
-
-  var helpFloats = new Float32Array(heapBytes.buffer, heapBytes.byteOffset, floatData.length);
-  for(i = 0; i < floatData.length; i++){
-    console.log(i + ": "+ helpFloats[i]);
-  }
-
+Module["sum"] = function(intArray){
+  var heapBytes = _arrayToHeap(intArray);
+  var ret = Module.ccall('sum', 'number',['number','number'], [heapBytes.byteOffset, typedArray.length]);
   _freeArray(heapBytes);
-
   return ret;
 };
