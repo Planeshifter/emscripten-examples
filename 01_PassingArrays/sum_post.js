@@ -12,7 +12,7 @@ function _freeArray(heapBytes){
 
 Module["sum"] = function(intArray){
   var heapBytes = _arrayToHeap(intArray);
-  var ret = Module.ccall('sum', 'number',['number','number'], [heapBytes.byteOffset, typedArray.length]);
+  var ret = Module.ccall('sum', 'number',['number','number'], [heapBytes.byteOffset, intArray.length]);
   _freeArray(heapBytes);
   return ret;
 };
