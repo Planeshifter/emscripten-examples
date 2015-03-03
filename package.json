@@ -1,0 +1,22 @@
+{
+  "name": "emscripten-examples",
+  "version": "0.1.0",
+  "description": " collection of emscripten use cases of how to port C/C++ functions to JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Planeshifter/emscripten-examples.git"
+  },
+  "author": "Philipp Burckhardt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Planeshifter/emscripten-examples/issues"
+  },
+  "homepage": "https://github.com/Planeshifter/emscripten-examples",
+  "dependencies": {
+    "ndarray": "^1.0.16"
+  }
+}
