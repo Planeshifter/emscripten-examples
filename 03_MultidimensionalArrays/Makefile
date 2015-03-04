@@ -1,8 +1,8 @@
 all:
-	emcc -O3 src/square.c --post-js src/square_post.js -o lib/square.js --memory-init-file 0 -s EXPORTED_FUNCTIONS="['_square']"
+	emcc -O3 src/fill.c --post-js src/fill_post.js -o lib/fill.js --memory-init-file 0 -s EXPORTED_FUNCTIONS="['_fill']"
 
 clean:
 	rm -f *.js *.js.mem
 
 .PHONY:
-	clean
+	clean all
